@@ -36,7 +36,7 @@ const AddOfferProduct = () => {
       if (!selectedCategory) return;
       try {
         const { data } = await axios.get(
-          `/api/v1/product/products-by-category/${selectedCategory}`
+          `https://loomibackend.onrender.com/api/v1/product/products-by-category/${selectedCategory}`
         );
         if (data?.success) {
           setProducts(data.products);
