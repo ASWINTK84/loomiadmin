@@ -384,7 +384,7 @@ function Sidebar({
             </li>
              <li>
               <NavLink
-                 to={`/product/create/${cid}`}
+                 to={`https://loomibackend.onrender.com/api/v1/product/create/${cid}`}
                 className={({ isActive }) =>
                   "block transition duration-150 truncate " +
                   (isActive
