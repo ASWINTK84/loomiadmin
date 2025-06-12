@@ -25,7 +25,7 @@ const CreateProduct = () => {
     const fetchCategory = async () => {
       if (!cid) return;
       try {
-        const { data } = await axios.get(`http://localhost:5050/api/v1/category/single-category/${cid}`);
+        const { data } = await axios.get(`https://loomibackend.onrender.com/api/v1/category/single-category/${cid}`);
         if (data.success) {
           setCategory(data.category);
         }
@@ -85,7 +85,7 @@ const CreateProduct = () => {
 
     console.log("Submitting payload:", payload);
 
-    const { data } = await axios.post("http://localhost:5050/api/v1/product/create-product", payload);
+    const { data } = await axios.post("https://loomibackend.onrender.com/api/v1/product/create-product", payload);
 
     if (data.success) {
       alert("✅ Product Created");

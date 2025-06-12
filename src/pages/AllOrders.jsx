@@ -9,7 +9,7 @@ const AllOrders = () => {
   const [error, setError] = useState("");
 
   // Base URL for your API
-  const API_BASE_URL = 'http://localhost:5050/api'; // Define your API base URL
+  const API_BASE_URL = 'https://loomibackend.onrender.com/api'; // Define your API base URL
 
   const fetchOrders = async () => {
     try {

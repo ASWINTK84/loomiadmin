@@ -16,7 +16,7 @@ const OfferProducts = () => {
   const fetchOffers = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("http://localhost:5050/api/offer-products/getoffer-products");
+      const { data } = await axios.get("https://loomibackend.onrender.com/api/offer-products/getoffer-products");
       if (data.success) {
         setOfferProducts(data.offerProducts);
         setFilteredOffers(data.offerProducts);
@@ -57,7 +57,7 @@ const OfferProducts = () => {
     }
     try {
       const { data } = await axios.put(
-        `http://localhost:5050/api/offer-products/${selectedOffer._id}`,
+        `https://loomibackend.onrender.com/api/offer-products/${selectedOffer._id}`,
         { offerPercentage: Number(newOfferPercentage) }
       );
       if (data.success) {
@@ -75,7 +75,7 @@ const OfferProducts = () => {
   const handleDeleteOffer = async (id) => {
     if (!window.confirm("Are you sure you want to delete this offer?")) return;
     try {
-      const { data } = await axios.delete(`http://localhost:5050/api/offer-products/${id}`);
+      const { data } = await axios.delete(`https://loomibackend.onrender.com/api/offer-products/${id}`);
       if (data.success) {
         fetchOffers();
         if (selectedOffer?._id === id) setSelectedOffer(null);

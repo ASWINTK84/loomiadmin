@@ -41,7 +41,7 @@ const Products = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
     if (!confirmDelete) return;
 
-    const { data } = await axios.delete(`http://localhost:5050/api/v1/product/delete-product/${pid}`);
+    const { data } = await axios.delete(`https://loomibackend.onrender.com/api/v1/product/delete-product/${pid}`);
     if (data.success) {
       alert("✅ Product deleted successfully");
       // Remove from UI

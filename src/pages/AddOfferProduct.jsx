@@ -55,7 +55,7 @@ const AddOfferProduct = () => {
     setLoading(true);
     setError(null);
     try {
-      await axios.post("http://localhost:5050/api/offer-products/addoffer-products", {
+      await axios.post("https://loomibackend.onrender.com/api/offer-products/addoffer-products", {
         productId: selectedProduct,
         offerPercentage,
       });
