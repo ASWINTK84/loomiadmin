@@ -12,7 +12,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get(`/api/v1/product/products-by-category/${cid}`);
+        const { data } = await axios.get(`https://loomibackend.onrender.com/api/v1/product/products-by-category/${cid}`);
         if (data?.success) {
           setProducts(data.products);
         }
