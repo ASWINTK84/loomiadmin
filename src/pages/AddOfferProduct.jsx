@@ -17,7 +17,7 @@ const AddOfferProduct = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get("/api/v1/category/get-category");
+        const { data } = await axios.get("https://loomibackend.onrender.com/api/v1/category/get-category");
         if (data.success) {
           setCategories(data.category); // or data.categories based on your backend
         }
