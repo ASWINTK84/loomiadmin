@@ -371,7 +371,7 @@ function Sidebar({
           <ul className={`pl-8 mt-1 ${!open && "hidden"}`}>
             <li>
               <NavLink
-                to={`/products/category/${cat._id}`}
+                to={`https://loomibackend.onrender.com/products/category/${cat._id}`}
                 className={({ isActive }) =>
                   "block transition duration-150 truncate " +
                   (isActive
@@ -384,7 +384,7 @@ function Sidebar({
             </li>
              <li>
               <NavLink
-                 to={`/product/create/${cid}`}
+                 to={`https://loomibackend.onrender.com/product/create/${cid}`}
                 className={({ isActive }) =>
                   "block transition duration-150 truncate " +
                   (isActive
