@@ -23,7 +23,7 @@ const Products = () => {
 
     const fetchCategory = async () => {
       try {
-        const { data } = await axios.get(`/api/v1/category/single-category/${cid}`);
+        const { data } = await axios.get(`https://loomibackend.onrender.com/api/v1/category/single-category/${cid}`);
         if (data?.success) {
           setCategory(data.category);
         }
