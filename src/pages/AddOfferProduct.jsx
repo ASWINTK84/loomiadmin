@@ -13,13 +13,13 @@ const AddOfferProduct = () => {
 
   const navigate = useNavigate();
 
-  // Fetch categories on mount
+ 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get("https://loomibackend.onrender.com/api/v1/category/get-category");
         if (data.success) {
-          setCategories(data.category); // or data.categories based on your backend
+          setCategories(data.category); 
         }
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -30,7 +30,7 @@ const AddOfferProduct = () => {
     fetchCategories();
   }, []);
 
-  // Fetch products when category changes
+  
   useEffect(() => {
     const fetchProducts = async () => {
       if (!selectedCategory) return;
@@ -61,8 +61,8 @@ const AddOfferProduct = () => {
       });
       alert("Offer product added successfully");
 
-      // Redirect to view products page
-      navigate("/get-offer-products"); // change this if your view product route is different
+      
+      navigate("/get-offer-products"); 
     } catch (err) {
       console.error("Failed to add offer product:", err);
       setError("Something went wrong while adding the offer product");
@@ -91,7 +91,7 @@ const AddOfferProduct = () => {
           value={selectedCategory}
           onChange={(e) => {
             setSelectedCategory(e.target.value);
-            setSelectedProduct(""); // reset product on category change
+            setSelectedProduct(""); 
             setProducts([]);
           }}
           className="block w-full mb-6 px-3 py-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:text-white dark:border-gray-600"

@@ -101,11 +101,11 @@ const CreateProduct = () => {
       setPhoto(null);
       navigate(`/products/category/${cid}`);
     } else {
-      alert("❌ Failed to create product");
+      alert(" Failed to create product");
     }
   } catch (err) {
     console.error(err);
-    alert("❌ Failed to create product: " + err?.response?.data?.message);
+    alert(" Failed to create product: " + err?.response?.data?.message);
   }
 };
 

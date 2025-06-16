@@ -33,15 +33,15 @@ const CreateCategory = () => {
           window.location.reload();
         }, 500);
       } else if (data.message?.toLowerCase().includes("already exists")) {
-        setMessage("❌ Category already exists.");
+        setMessage(" Category already exists.");
         setIsError(true);
       } else {
-        setMessage("❌ Failed to create category.");
+        setMessage(" Failed to create category.");
         setIsError(true);
       }
     } catch (error) {
       console.error("Error creating category:", error);
-      setMessage("❌ Server error. Please try again.");
+      setMessage(" Server error. Please try again.");
       setIsError(true);
     } finally {
       setLoading(false);

@@ -44,7 +44,7 @@ const Products = () => {
     const { data } = await axios.delete(`https://loomibackend.onrender.com/api/v1/product/delete-product/${pid}`);
     if (data.success) {
       alert("✅ Product deleted successfully");
-      // Remove from UI
+      
       setProducts((prev) => prev.filter((p) => p._id !== pid));
     } else {
       alert("❌ Failed to delete product");

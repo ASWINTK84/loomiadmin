@@ -110,11 +110,11 @@ const EditProduct = () => {
         alert("✅ Product updated successfully");
         navigate(`/products/category/${product.cid}`);
       } else {
-        alert("❌ Failed to update product");
+        alert(" Failed to update product");
       }
     } catch (err) {
       console.error(err);
-      alert("❌ An error occurred during update");
+      alert(" An error occurred during update");
     } finally {
       setLoading(false);
     }

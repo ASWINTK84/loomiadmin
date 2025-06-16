@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { format } from "date-fns"; // To format the order date
+import { format } from "date-fns"; 
 
 const AllOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -9,15 +9,15 @@ const AllOrders = () => {
   const [error, setError] = useState("");
 
   // Base URL for your API
-  const API_BASE_URL = 'https://loomibackend.onrender.com/api'; // Define your API base URL
+  const API_BASE_URL = 'https://loomibackend.onrender.com/api'; 
 
   const fetchOrders = async () => {
     try {
-      // Assuming your API requires an authorization token for fetching orders
+     
       const token = localStorage.getItem("token"); 
       const { data } = await axios.get(`${API_BASE_URL}/orders`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Pass the token
+          Authorization: `Bearer ${token}`, 
         },
       });
       if (data.success) {
@@ -38,7 +38,7 @@ const AllOrders = () => {
   const handleStatusChange = async (orderId, newStatus) => {
     setStatusUpdating(true);
     try {
-      const token = localStorage.getItem("token"); // Assuming token is stored in localStorage
+      const token = localStorage.getItem("token"); 
       await axios.put(
         `${API_BASE_URL}/orders/${orderId}`,
         { status: newStatus },
@@ -50,8 +50,8 @@ const AllOrders = () => {
       );
       // Update selectedOrder's status directly to avoid flickering, then re-fetch for full consistency
       setSelectedOrder((prevOrder) => ({ ...prevOrder, status: newStatus }));
-      fetchOrders(); // Re-fetch orders to update the list and table view
-      alert(`Order ${orderId.slice(-6)} status updated to ${newStatus}`); // Simple alert for confirmation
+      fetchOrders(); 
+      alert(`Order ${orderId.slice(-6)} status updated to ${newStatus}`); 
     } catch (err) {
       console.error("Error updating order status:", err);
       alert("Failed to update order status. Please try again.");
@@ -64,7 +64,7 @@ const AllOrders = () => {
     "Pending",
     "Processing",
     "Shipped",
-    "Out for Delivery", // Added this specific status if you use it
+    "Out for Delivery", 
     "Delivered",
     "Cancelled",
   ];
@@ -217,7 +217,7 @@ const AllOrders = () => {
                   {selectedOrder.items && selectedOrder.items.length > 0 ? (
                     selectedOrder.items.map((item) => (
                       <div
-                        // Key should ideally be unique per item in the order,
+                        
                         // combining product _id with size/color if product object is simple
                         key={`${item.product?._id || item._id}-${item.size || ''}-${item.color || ''}`}
                         className="flex items-center gap-3 bg-gray-100 dark:bg-gray-600 p-2 rounded-md shadow-sm"
@@ -238,7 +238,7 @@ const AllOrders = () => {
                           {(item.size || item.color) && (
                             <p className="text-gray-600 dark:text-gray-300 text-xs">
                               {item.size && `Size: ${item.size}`}
-                              {item.size && item.color && ", "} {/* Add comma only if both exist */}
+                              {item.size && item.color && ", "} 
                               {item.color && `Color: ${item.color}`}
                             </p>
                           )}

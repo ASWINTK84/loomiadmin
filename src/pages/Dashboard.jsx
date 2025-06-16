@@ -24,7 +24,7 @@ function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
-  // Show dashboard cards only on the root dashboard path
+  
   const isRootDashboard = location.pathname === '/';
 
   return (
